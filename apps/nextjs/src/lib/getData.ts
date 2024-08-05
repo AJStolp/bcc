@@ -1,0 +1,13 @@
+import { HeroProps, ServiceProps } from "../types/interfaces";
+
+export async function getHeroData(): Promise<HeroProps[]> {
+  const res = await fetch("http://localhost:5000/api/hero-data");
+  if (!res.ok) throw new Error("Failed to fetch hero data");
+  return res.json();
+}
+
+export async function getServicesData(): Promise<ServiceProps[]> {
+  const res = await fetch("http://localhost:5000/api/services");
+  if (!res.ok) throw new Error("Failed to fetch services data");
+  return res.json();
+}
