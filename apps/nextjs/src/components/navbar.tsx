@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+
 import { Button } from "@saasfly/ui/button";
 
 import { LocaleChange } from "~/components/locale-change";
@@ -47,16 +49,11 @@ export function NavBar({
         <div className="flex items-center space-x-3">
           {rightElements}
           <LocaleChange url={"/"} />
-          <Button
-            className="px-3"
-            variant="default"
-            size="sm"
-            onClick={signInModal.onOpen}
-          >
-            {typeof marketing.signup === "string"
-              ? marketing.signup
-              : "Default Signup Text"}
-          </Button>
+          <Link href={`/${lang}/contact`}>
+            <Button className="mr-2 px-3" variant="outline" size="sm">
+              {marketing.contact || "Contact"}
+            </Button>
+          </Link>
         </div>
       </div>
     </header>

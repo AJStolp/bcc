@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 import { Meteors } from "@saasfly/ui/meteors";
 
 import { HeroProps } from "~/types/interfaces";
@@ -17,15 +19,15 @@ export function Meteorss({ heroData }: { heroData: HeroProps[] }) {
               "We're excited to help you build amazing websites and creative solutions. Let's create something great together."}
           </p>
 
-          <a
-            href={heroData[1]?.url || "mailto:Backcountrycreative.com"}
+          <Link
+            href={heroData[1]?.url || "/contact"}
             target="_blank"
             rel="noopener noreferrer"
           >
             <button className="light:text-gray-400 rounded-lg border border-gray-500 px-4 py-1 dark:text-gray-300">
               {heroData[1]?.cta || "Chat with us"}
             </button>
-          </a>
+          </Link>
 
           <Meteors number={20} />
         </div>
