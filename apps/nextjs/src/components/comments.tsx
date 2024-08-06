@@ -3,40 +3,28 @@ import Marquee from "@saasfly/ui/marquee";
 
 const reviews = [
   {
-    name: "Jack",
-    username: "@jack",
-    body: "I've never seen anything like this before. It's amazing. I love it.",
-    img: "https://avatar.vercel.sh/jack",
+    name: "Jason",
+    username: "Polar Lights Imaging",
+    body: "Backcountry Creative built our site from scratch, and the results are fantastic. They're great to work with and really understand our vision.",
+    img: "/images/pli-fox-logo-new.webp",
   },
   {
-    name: "Alex",
-    username: "@alex",
-    body: "This tool has revolutionized the way our team works.",
-    img: "https://avatar.vercel.sh/jill",
+    name: "Radiant Hair Salon",
+    username: "Radiant906",
+    body: "The transformation in our online presence is remarkable. Backcountry Creative streamlined our online booking and brought innovative solutions that have truly revolutionized our business.",
+    img: "/images/radiant-logo.webp",
   },
   {
-    name: "Shamoki",
-    username: "@shamoki",
-    body: "I'm at a loss for words. This is amazing. I love it.",
-    img: "https://avatar.vercel.sh/john",
+    name: "Yooper Bros Coffee",
+    username: "YB",
+    body: "I’m at a loss for words. The website they developed for us is outstanding. It’s been a game-changer for our business.",
+    img: "/images/yb-logo-main-nobg-upscaled.webp",
   },
   {
-    name: "王伟",
-    username: "@wangwei",
-    body: "这款 SaaS 服务简直是办公利器！我的工作效率提高了很多。",
-    img: "https://avatar.vercel.sh/jane",
-  },
-  {
-    name: "김민수",
-    username: "@kios",
-    body: "저는 이 SaaS 서비스에 매우 만족하고 있습니다.",
-    img: "https://avatar.vercel.sh/jenny",
-  },
-  {
-    name: "山田太郎",
-    username: "@samtimkun",
-    body: "このSaaSサービスには本当に感謝しています。",
-    img: "https://avatar.vercel.sh/james",
+    name: "Coffee Cup Hut",
+    username: "CCH",
+    body: "Working with Backcountry Creative has been a great experience. Their expertise and creativity brought our ideas to life.",
+    img: "/images/cch-logo-2x.webp",
   },
 ];
 
@@ -90,7 +78,6 @@ const Comments = () => {
         {secondRow.map((review) => (
           <ReviewCard key={review.username} {...review} />
         ))}
-        here
       </Marquee>
       <div className="pointer-events-none absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-white dark:from-background"></div>
       <div className="pointer-events-none absolute inset-y-0 right-0 w-1/3 bg-gradient-to-l from-white dark:from-background"></div>

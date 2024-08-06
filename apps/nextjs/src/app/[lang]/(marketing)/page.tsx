@@ -2,39 +2,19 @@ import Link from "next/link";
 
 import * as Icons from "@saasfly/ui/icons";
 
-import { XBlogArticle } from "~/components/blog-card";
 import { Comments } from "~/components/comments";
 import { DocumentGuide } from "~/components/document-guide";
 import { FeaturesCard } from "~/components/features-card";
 import { Meteorss } from "~/components/meteors-card";
 import { Questions } from "~/components/questions";
 import ShimmerButton from "~/components/shimmer-button";
+import { WebTrend } from "~/components/trends";
 import { TypewriterEffectSmooths } from "~/components/typewriterEffectSmooth";
 import { WobbleCardShow } from "~/components/wobble";
 import { WordReveal } from "~/components/word-reveal";
 import type { Locale } from "~/config/i18n-config";
 import { getDictionary } from "~/lib/get-dictionary";
-import { Meteor } from "~/types/meteors";
-
-const meteors_data: Meteor = {
-  name: "Unleashing Creativity",
-  description:
-    "We’re excited to help you build amazing websites and creative solutions. Let’s create something great together. Contact Us",
-  button_content: "Chat with us",
-  url: "mailto:Backcountrycreative.com",
-};
-
-async function getHeroData() {
-  const res = await fetch("http://localhost:5000/api/hero-data");
-  if (!res.ok) throw new Error("Failed to fetch hero data");
-  return res.json();
-}
-
-async function getServicesData() {
-  const res = await fetch("http://localhost:5000/api/services");
-  if (!res.ok) throw new Error("Failed to fetch services data");
-  return res.json();
-}
+import { getHeroData, getServicesData, getWebTrendData } from "~/lib/getData";
 
 export default async function IndexPage({
   params: { lang },
@@ -46,6 +26,7 @@ export default async function IndexPage({
   const dict = await getDictionary(lang);
   const heroData = await getHeroData();
   const servicesData = await getServicesData();
+  const webTrendData = await getWebTrendData();
 
   return (
     <>
@@ -73,29 +54,30 @@ export default async function IndexPage({
               </div>
             </div>
             <div className="mb-4 mt-6 flex w-full flex-col justify-center space-y-4 sm:flex-row sm:justify-start sm:space-x-8 sm:space-y-0">
-              <Link href={`${lang}/login`}>
+              <Link href="#services">
                 <ShimmerButton className="mx-auto flex justify-center">
                   <span className="z-10 w-48 whitespace-pre bg-gradient-to-b from-black from-30% to-gray-300/80 bg-clip-text text-center text-sm font-semibold leading-none tracking-tight text-white dark:from-white dark:to-slate-900/10 dark:text-transparent">
-                    {dict.marketing.get_started}
+                    Get Started
                   </span>
                 </ShimmerButton>
               </Link>
 
-              <Link href="https://github.com/saasfly/saasfly" target="_blank">
+              {/* <Link href="https://github.com/saasfly/saasfly" target="_blank">
                 <div className="flex h-full items-center justify-center">
                   <Icons.GitHub className="mr-2 h-6 w-6" />
                   <span className="text-base font-semibold">
                     {dict.marketing.view_on_github || "View on GitHub"}
                   </span>
                 </div>
-              </Link>
+              </Link> */}
             </div>
           </div>
           <div className="hidden h-full w-full xl:block">
             <div className="flex flex-col pt-28">
-              <Meteorss meteor={meteors_data} />
+              <Meteorss heroData={heroData} />
+              {/* <Meteorss meteor={meteors_data} /> */}
               <div className="mt-4 flex w-full justify-between">
-                <XBlogArticle />
+                <WebTrend trends={webTrendData.trends} />
                 <div className="ml-4">
                   <FeaturesCard />
                 </div>
@@ -105,7 +87,10 @@ export default async function IndexPage({
         </div>
       </section>
 
-      <section className="w-full px-8 py-16 sm:px-48 md:px-48 xl:px-48">
+      {/* <section
+        id="#services"
+        className="w-full px-8 py-16 sm:px-48 md:px-48 xl:px-48"
+      >
         <h2 className="mb-8 text-3xl font-bold">Our Services</h2>
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
           {servicesData.map((service) => (
@@ -115,7 +100,7 @@ export default async function IndexPage({
             </div>
           ))}
         </div>
-      </section>
+      </section> */}
 
       <section className="hidden h-[100vh] w-full xl:block">
         <div className="flex h-full w-full justify-between px-[220px]">
@@ -130,16 +115,22 @@ export default async function IndexPage({
         </div>
       </section>
 
-      <section className="hidden h-[100vh] w-full xl:block">
+      <section className="hidden h-[100vh] w-full px-8 xl:block">
         <div className="flex h-full w-full justify-between px-[220px]">
           <div className="flex w-[60%] flex-col pr-4 pt-40">
-            <Questions />
+            <div className="px-[120px]">
+              <Questions />
+            </div>
           </div>
         </div>
       </section>
 
+      <section className="w-full sm:px-48 xl:hidden">
+        <Questions />
+      </section>
+
       <section className="w-full px-8 pt-10 sm:px-0 sm:pt-0 md:px-0 md:pt-0 xl:px-0 xl:pt-0">
-        <div className="flex h-full w-full flex-col items-center pb-[100px] pt-10">
+        <div className="flex h-full w-full flex-col items-center pb-[100px] pt-44">
           <div>
             <h1 className="mb-6 text-center text-3xl font-bold dark:text-zinc-100 md:text-5xl">
               What People Are Saying

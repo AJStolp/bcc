@@ -9,12 +9,9 @@ const noNeedProcessRoute = [".*\\.png", ".*\\.jpg", ".*\\.opengraph-image.png"];
 const noRedirectRoute = ["/api(.*)", "/trpc(.*)", "/admin"];
 
 const publicRoute = [
-  "/(\\w{2}/)?signin(.*)",
-  "/(\\w{2}/)?terms(.*)",
-  "/(\\w{2}/)?privacy(.*)",
-  "/(\\w{2}/)?docs(.*)",
-  "/(\\w{2}/)?blog(.*)",
-  "/(\\w{2}/)?pricing(.*)",
+  "/(\\w{2}/)?ourwork(.*)",
+  "/(\\w{2}/)?creative(.*)",
+  "/(\\w{2}/)?contact(.*)",
   "^/\\w{2}$", // root with locale
 ];
 
@@ -45,13 +42,6 @@ function isNoNeedProcess(request: NextRequest): boolean {
   return noNeedProcessRoute.some((route) => new RegExp(route).test(pathname));
 }
 
-/**
- * 1、 if the request is public page and don't have locale, redirect to locale page
- * 2、 if the request is not public page and don't have locale, redirect to login page
- * 3、
- * @param request
- * @returns
- */
 export default async function middleware(request: NextRequest) {
   if (isNoNeedProcess(request)) {
     return null;
@@ -80,10 +70,9 @@ export default async function middleware(request: NextRequest) {
   if (isPublicPage(request)) {
     return null;
   }
-  // @ts-ignore
-  return authMiddleware(request, null);
+  return NextResponse.next();
 }
 
 export const config = {
-  matcher: ["/((?!.*\\..*|_next).*)", "/", "/(api|trpc)(.*)"],
+  matcher: ["/((?!.*\\..*|_next).*)", "/"],
 };

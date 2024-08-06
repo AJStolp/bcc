@@ -18,26 +18,18 @@
     "go_to_dashboard": "Go to dashboard",
     "": ""
   },
-  "marketing": {
+ "marketing": {
     "introducing": "To the moon and beyond",
-    "title": "Saasfly: A new SaaS player? Make things easier.",
-    "sub_title": "Your complete All-in-One solution for building SaaS services.",
+    "title": "Backcountry Creative: Transforming Digital Experiences",
+    "sub_title": "Your partner in creating stunning web and creative solutions.",
     "get_started": "Get Started",
     "view_on_github": "View on GitHub",
     "explore_product": "Explore Product",
-    "features": "Features",
-    "sub_features": "Cloud-native: Simplifying technology and reducing costs for startups.",
-    "k8s_features": "Fast, simple development",
-    "devops_features": "Easy application deployment",
-    "price_features": "Economically efficient for production environments.",
-    "main_nav_features": "Features",
-    "main_nav_pricing": "Pricing",
-    "main_nav_products": "Products",
-    "main_nav_blog": "Blog",
-    "main_nav_documentation": "Documentation",
+    "main_nav_ourwork": "Our Work",
+    "main_nav_creative": "Creative Services",
+    "main_nav_contact": "Contact",
     "login": "Login",
-    "signup": "Sign up",
-    "": ""
+    "signup": "Sign up"
   },
   "login": {
     "back": "Back",
@@ -52,7 +44,7 @@
     "": ""
   },
   "common": {
-    "copyright": "Copyright © ${currentYear} Backcountrry Creative.",
+    "copyright": "Copyright © ${currentYear} Backcountry Creative.",
     "dashboard": {
       "main_nav_documentation": "Documentation",
       "main_nav_support": "Support",
