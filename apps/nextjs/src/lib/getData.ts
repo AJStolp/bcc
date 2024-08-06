@@ -1,4 +1,9 @@
-import { HeroProps, ServiceProps } from "../types/interfaces";
+import {
+  HeroProps,
+  ServiceProps,
+  WebTrendItem,
+  WebTrendProps,
+} from "../types/interfaces";
 
 export async function getHeroData(): Promise<HeroProps[]> {
   const res = await fetch("http://localhost:5000/api/hero-data");
@@ -10,4 +15,11 @@ export async function getServicesData(): Promise<ServiceProps[]> {
   const res = await fetch("http://localhost:5000/api/services");
   if (!res.ok) throw new Error("Failed to fetch services data");
   return res.json();
+}
+
+export async function getWebTrendData(): Promise<WebTrendProps> {
+  const res = await fetch("http://localhost:5000/api/web-trend");
+  if (!res.ok) throw new Error("Failed to fetch web trend data");
+  const data: WebTrendItem[] = await res.json();
+  return { trends: data };
 }

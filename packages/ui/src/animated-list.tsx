@@ -7,7 +7,7 @@ export const AnimatedList = React.memo(
   ({
     className,
     children,
-    delay = 1000,
+    delay = 2000,
   }: {
     className?: string;
     children: React.ReactNode;

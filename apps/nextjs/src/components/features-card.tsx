@@ -13,37 +13,40 @@ interface Item {
 
 let notifications = [
   {
-    name: "Payment received",
-    description: "Stripe subscription",
-    time: "15m ago",
-
-    icon: "💸",
+    name: "New Project Launched",
+    description:
+      "Launched a stunning new website for Polar Lights Imaging. Check it out!",
+    time: "", // Removed time as per your requirement
+    icon: "🌐",
     color: "#00C9A7",
   },
   {
-    name: "User signed up",
-    description: "Auth, simple and clean",
-    time: "10m ago",
-    icon: "👤",
+    name: "Design Review Completed",
+    description:
+      "Completed design review for Radiant Hair Salon's new booking system. Ready to impress!",
+    time: "", // Removed time as per your requirement
+    icon: "✏️",
     color: "#FFB800",
   },
   {
-    name: "New Emails",
-    description: "Create beautiful emails",
-    time: "5m ago",
-    icon: "💬",
+    name: "Positive Feedback",
+    description:
+      "Received rave reviews from Yooper Bros Coffee on their new website. They're thrilled!",
+    time: "", // Removed time as per your requirement
+    icon: "👍",
     color: "#FF3D71",
   },
   {
-    name: "Easy Deploy",
-    description: "Deploy your app with ease",
-    time: "2m ago",
-    icon: "🗞️",
+    name: "Milestone Achieved",
+    description:
+      "Achieved a major milestone in developing a custom menu design for Coffee Cup Hut.",
+    time: "", // Removed time as per your requirement
+    icon: "🏆",
     color: "#1E86FF",
   },
 ];
 
-notifications = Array.from({ length: 10 }, () => notifications).flat();
+notifications = Array.from({ length: 4 }, () => notifications).flat();
 
 const Notification = ({ name, description, icon, color, time }: Item) => {
   return (
@@ -60,7 +63,7 @@ const Notification = ({ name, description, icon, color, time }: Item) => {
     >
       <div className="flex flex-row items-center gap-3">
         <div
-          className="flex h-10 w-10 items-center justify-center rounded-2xl"
+          className="flex h-10 w-20 items-center justify-center rounded-2xl"
           style={{
             backgroundColor: color,
           }}
@@ -84,7 +87,7 @@ const Notification = ({ name, description, icon, color, time }: Item) => {
 
 export function FeaturesCard() {
   return (
-    <div className="relative flex max-h-[435px] min-h-[435px] flex-col overflow-hidden rounded-2xl border bg-background p-6 shadow-lg dark:border-[#443c3c]">
+    <div className="relative flex max-h-[507px] min-h-[507px] flex-col overflow-hidden rounded-2xl border bg-background p-6 shadow-lg dark:border-[#443c3c]">
       <AnimatedList>
         {notifications.map((item, idx) => (
           <Notification {...item} key={idx} />

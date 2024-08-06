@@ -1,7 +1,8 @@
 export const siteConfig = {
-  name: "Saasfly",
-  description: "We provide an easier way to build saas service in production",
-  url: "https://github.com/saasfly/saasfly",
+  name: "Backcountry Creative",
+  description:
+    "Backcountry Creative is a development agency offering web design and development, and digital marketing services.",
+  url: "https://backcountrycreative.com",
   ogImage: "",
   links: {
     github: "https://github.com/saasfly/saasfly",
