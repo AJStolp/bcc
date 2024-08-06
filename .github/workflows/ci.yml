@@ -25,6 +25,10 @@ jobs:
         run: bun run build
         env:
           NEXT_PUBLIC_APP_URL: ${{ secrets.NEXT_PUBLIC_APP_URL }}
+          NEXTAUTH_URL: ${{ secrets.NEXTAUTH_URL }}
 
-      - name: lint and type-check
-        run: bun run lint format typecheck
+      - name: Lint and Type-Check
+        run: |
+          bun run lint
+          bun run format
+          bun run typecheck
