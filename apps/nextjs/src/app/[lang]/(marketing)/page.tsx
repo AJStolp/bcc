@@ -12,7 +12,7 @@ import { WobbleCardShow } from "~/components/wobble";
 import { WordReveal } from "~/components/word-reveal";
 import type { Locale } from "~/config/i18n-config";
 import { getDictionary } from "~/lib/get-dictionary";
-import { getHeroData, getServicesData, getWebTrendData } from "~/lib/getData";
+import { getHeroData, getWebTrendData } from "~/lib/getData";
 
 export default async function IndexPage({
   params: { lang },
@@ -23,7 +23,6 @@ export default async function IndexPage({
 }>) {
   const dict = await getDictionary(lang);
   const heroData = await getHeroData();
-  const servicesData = await getServicesData();
   const webTrendData = await getWebTrendData();
 
   return (
@@ -84,21 +83,6 @@ export default async function IndexPage({
           </div>
         </div>
       </section>
-
-      {/* <section
-        id="#services"
-        className="w-full px-8 py-16 sm:px-48 md:px-48 xl:px-48"
-      >
-        <h2 className="mb-8 text-3xl font-bold">Our Services</h2>
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-          {servicesData.map((service) => (
-            <div key={service.key} className="rounded-lg border p-6 shadow-sm">
-              <h3 className="mb-4 text-xl font-semibold">{service.title}</h3>
-              <p>{service.content}</p>
-            </div>
-          ))}
-        </div>
-      </section> */}
 
       <section className="hidden h-[100vh] w-full xl:block">
         <div className="flex h-full w-full justify-between px-[220px]">
