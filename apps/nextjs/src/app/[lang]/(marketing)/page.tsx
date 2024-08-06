@@ -1,7 +1,5 @@
 import Link from "next/link";
 
-import * as Icons from "@saasfly/ui/icons";
-
 import { Comments } from "~/components/comments";
 import { DocumentGuide } from "~/components/document-guide";
 import { FeaturesCard } from "~/components/features-card";

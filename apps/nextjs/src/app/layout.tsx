@@ -38,13 +38,13 @@ export const metadata = {
   },
   description: siteConfig.description,
   keywords: [
-    "Next.js",
-    "Shadcn ui",
-    "Sass",
-    "Fast ",
-    "Simple ",
-    "Easy",
-    "Cloud Native",
+    "Web Development",
+    "Digital Agency",
+    "Upper Peninsual",
+    "Upper Peninsula Digital Media",
+    "906",
+    "creative",
+    "agency",
   ],
   authors: [
     {

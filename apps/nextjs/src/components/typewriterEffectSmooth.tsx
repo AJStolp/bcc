@@ -26,7 +26,11 @@ export function TypewriterEffectSmooths() {
       text: "with",
     },
     {
-      text: "Backcountry Creative",
+      text: "Backcountry",
+      className: "text-cyan-400",
+    },
+    {
+      text: "Creative",
       className: "text-cyan-400",
     },
   ];
