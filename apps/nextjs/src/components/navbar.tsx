@@ -6,7 +6,6 @@ import { Button } from "@saasfly/ui/button";
 
 import { LocaleChange } from "~/components/locale-change";
 import useScroll from "~/hooks/use-scroll";
-import { useSigninModal } from "~/hooks/use-signin-modal";
 import type { MainNavItem } from "~/types";
 import { MainNav } from "./main-nav";
 
@@ -34,7 +33,6 @@ export function NavBar({
   dropdown,
 }: Readonly<NavBarProps>) {
   const scrolled = useScroll(50);
-  const signInModal = useSigninModal();
   return (
     <header
       className={`sticky top-0 z-40 flex w-full justify-center border-border bg-background/60 py-4 backdrop-blur-xl transition-all ${
@@ -48,9 +46,9 @@ export function NavBar({
 
         <div className="flex items-center space-x-3">
           {rightElements}
-          <LocaleChange url={"/"} />
-          <Link href={`/${lang}/contact`}>
-            <Button className="mr-2 px-3" variant="outline" size="sm">
+          <LocaleChange url={"/"} aria-label="contact Backcountry Creative" />
+          <Link href={`/${lang}/contact`} className="p-8">
+            <Button className="mr-2" variant="outline" size="lg">
               {marketing.contact || "Contact"}
             </Button>
           </Link>
