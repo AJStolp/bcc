@@ -1,7 +1,5 @@
 import type * as Lucide from "lucide-react";
 
-import type { Customer } from "@saasfly/db";
-
 export interface NavItem {
   title: string;
   href: string;
@@ -42,11 +40,6 @@ export interface SiteConfig {
   };
 }
 
-export interface DocsConfig {
-  mainNav: MainNavItem[];
-  sidebarNav: SidebarNavItem[];
-}
-
 export interface MarketingConfig {
   mainNav: MainNavItem[];
 }
@@ -55,29 +48,3 @@ export interface DashboardConfig {
   mainNav: MainNavItem[];
   sidebarNav: SidebarNavItem[];
 }
-
-export interface SubscriptionPlan {
-  title?: string;
-  description?: string;
-  benefits?: string[];
-  limitations?: string[];
-  prices?: {
-    monthly: number;
-    yearly: number;
-  };
-  stripeIds?: {
-    monthly: string | null;
-    yearly: string | null;
-  };
-}
-
-export type UserSubscriptionPlan = SubscriptionPlan &
-  Pick<
-    Customer,
-    "stripeCustomerId" | "stripeSubscriptionId" | "stripePriceId"
-  > & {
-    stripeCurrentPeriodEnd: number;
-    isPaid: boolean | "" | null;
-    interval: string | null;
-    isCanceled?: boolean;
-  };
