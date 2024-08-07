@@ -2,6 +2,7 @@
   "name": "@saasfly/nextjs",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "resolutions": {
     "eslint-plugin-jsx-a11y": "^6.9.0",
     "eslint-plugin-react": "^7.35.0"

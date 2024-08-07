@@ -3,15 +3,17 @@
   "private": true,
   "version": "0.1.0",
   "main": "index.ts",
+  "type": "module",
   "files": [
     "index.ts",
-    "postcss.js"
+    "postcss.config.cjs"
   ],
   "scripts": {
     "clean": "rm -rf .turbo node_modules",
     "lint": "eslint ",
     "format": "prettier --check '**/*.{ts,json}' ",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "build": "tsc"
   },
   "dependencies": {
     "autoprefixer": "10.4.17",
