@@ -1,5 +1,6 @@
 import * as React from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 import { cn } from "@saasfly/ui";
 
@@ -34,9 +35,19 @@ export function SiteFooter({
             height="36"
             alt=""
           />
-          <p className="text-center text-sm leading-loose md:text-left">
-            {getCopyrightText(dict)}
-          </p>
+          <div className="md:flex md:flex-col">
+            <p className="text-center text-sm leading-loose md:text-left">
+              {getCopyrightText(dict)}
+            </p>
+            <Link
+              href="/contact"
+              className="hover:text-teal-500 hover:underline"
+            >
+              <p className="text-center text-sm leading-loose md:text-left">
+                Spot an Accessibility issue? Please reach out.{" "}
+              </p>
+            </Link>
+          </div>
         </div>
         <ModeToggle />
       </div>
