@@ -1,7 +1,7 @@
 {
   "name": "nextjs-template",
   "private": true,
-  "type": "commonjs",
+  "type": "module",
   "scripts": {
     "build": "turbo build",
     "clean": "git clean -xdf node_modules",
@@ -10,8 +10,8 @@
     "dev": "turbo dev --parallel",
     "format": "turbo format --continue -- --cache --cache-location='node_modules/.cache/.prettiercache' --ignore-path='../../.gitignore'",
     "format:fix": "turbo format --continue -- --write --cache --cache-location='node_modules/.cache/.prettiercache' --ignore-path='../../.gitignore'",
-    "lint": "turbo lint -- --quiet -- --cache --cache-location 'node_modules/.cache/.eslintcache' && manypkg check",
-    "lint:fix": "turbo lint --continue -- --fix --cache --cache-location 'node_modules/.cache/.eslintcache'",
+    "lint": "eslint . --config eslint.config.mjs",
+    "lint:fix": "eslint . --fix --cache --cache-location=node_modules/.cache/.eslintcache",
     "typecheck": "turbo typecheck",
     "postinstall": "bun run check-deps",
     "check-deps": "check-dependency-version-consistency .",
@@ -20,15 +20,18 @@
     "tailwind-config-viewer": "tailwind-config-viewer -c ./index.js -o -p 3333"
   },
   "devDependencies": {
+    "@next/eslint-plugin-next": "^14.2.5",
     "@turbo/gen": "1.13.3",
     "check-dependency-version-consistency": "4.1.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-config-turbo": "^2.0.12",
+    "eslint-plugin-jsx-a11y": "^6.9.0",
     "eslint-plugin-prettier": "^5.2.1",
+    "eslint-plugin-react": "^7.35.0",
     "prettier": "^3.3.3",
     "tailwind-config-viewer": "^2.0.4",
     "turbo": "latest",
-    "typescript": "5.4.5"
+    "typescript": "5.1.6"
   },
   "engines": {
     "node": ">=18"
@@ -41,9 +44,9 @@
   ],
   "packageManager": "bun@1.1.10",
   "dependencies": {
-    "@typescript-eslint/eslint-plugin": "^8.0.1",
-    "@typescript-eslint/parser": "^8.0.1",
-    "eslint": "^9.8.0",
+    "@typescript-eslint/eslint-plugin": "^5.59.0",
+    "@typescript-eslint/parser": "^5.59.0",
+    "eslint": "^8.38.0",
     "eslint-plugin-turbo": "2.0.12"
   }
 }

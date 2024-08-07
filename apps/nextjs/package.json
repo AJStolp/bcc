@@ -2,6 +2,10 @@
   "name": "@saasfly/nextjs",
   "version": "0.1.0",
   "private": true,
+  "resolutions": {
+    "eslint-plugin-jsx-a11y": "^6.9.0",
+    "eslint-plugin-react": "^7.35.0"
+  },
   "scripts": {
     "build": "contentlayer2 build && bun with-env next build",
     "clean": "git clean -xdf .next .turbo node_modules",
@@ -9,7 +13,8 @@
     "lint": "bun with-env eslint . --quiet --cache --cache-location=node_modules/.cache/.eslintcache",
     "format": "prettier --write '**/*.{js,cjs,mjs,ts,tsx,md,json}' --ignore-path .prettierignore",
     "start": "bun with-env next start",
-    "with-env": "dotenv -e ../../.env.local --"
+    "with-env": "dotenv -e ../../.env.local --",
+    "postinstall": "bun run check-deps"
   },
   "dependencies": {
   "@dinero.js/currencies": "2.0.0-alpha.14",
@@ -58,10 +63,10 @@
     "@types/react-dom": "18.3.0",
     "autoprefixer": "10.4.17",
     "dotenv-cli": "7.3.0",
-    "eslint": "^9.8.0",
+    "eslint": "^8.38.0",
     "prettier": "^3.3.3",
     "tailwindcss": "3.4.1",
-    "typescript": "5.4.5",
+    "typescript": "5.1.6",
     "contentlayer2": "0.4.6",
     "next-contentlayer2": "0.4.6",
     "rehype": "13.0.1",
