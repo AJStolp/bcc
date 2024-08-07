@@ -120,8 +120,8 @@ export default async function IndexPage({
           </div>
           <div className="mb-6 text-xl dark:text-zinc-100 md:text-xl">
             Don’t just take our word for it. Here’s what{" "}
-            <span className="font-bold">real people</span> are saying about
-            Saasfly.
+            <span className="font-bold">real people</span> are saying about our
+            work.
           </div>
 
           <div className="w-full overflow-x-hidden">
