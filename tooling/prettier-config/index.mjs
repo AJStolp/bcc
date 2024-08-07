@@ -25,7 +25,7 @@ const config = {
     "^[./]",
   ],
   importOrderParserPlugins: ["typescript", "jsx", "decorators-legacy"],
-  importOrderTypeScriptVersion: "5.4.5",
+  importOrderTypeScriptVersion: "5.1.6",
 };
 
 export default config;

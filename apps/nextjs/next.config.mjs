@@ -7,12 +7,7 @@ import withMDX from "@next/mdx";
 const config = {
   reactStrictMode: true,
   /** Enables hot reloading for local packages without a build step */
-  transpilePackages: [
-    "@saasfly/api",
-    "@saasfly/db",
-    "@saasfly/common",
-    "@saasfly/ui",
-  ],
+  transpilePackages: ["@saasfly/api", "@saasfly/common", "@saasfly/ui"],
   pageExtensions: ["ts", "tsx", "mdx"],
   experimental: {
     mdxRs: true,

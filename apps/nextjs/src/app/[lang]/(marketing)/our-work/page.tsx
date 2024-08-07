@@ -32,7 +32,7 @@ export default function OurWorkPage() {
   return (
     <div className="min-h-screen bg-white text-black dark:bg-black dark:text-white">
       <div className="container mx-auto px-4 py-16">
-        <h1 className="mb-12 text-5xl font-bold">Our Work</h1>
+        <h1 className="mb-12 text-4xl font-bold">Our Work</h1>
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
           {projects.map((project, index) => (
             <Link href={project.link} key={index} target="_blank">

@@ -10,6 +10,7 @@ import { Callout } from "@saasfly/ui/callout";
 import { MdxCard } from "~/components/content/mdx-card";
 
 const components = {
+  // eslint-disable-next-line jsx-a11y/heading-has-content
   h1: ({ className, ...props }) => (
     <h1
       className={cn(
