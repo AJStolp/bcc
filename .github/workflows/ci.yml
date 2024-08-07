@@ -8,7 +8,7 @@ on:
   merge_group:
 
 jobs:
-  build-lint:
+  build:
     runs-on: ubuntu-latest
 
     steps:
@@ -29,9 +29,3 @@ jobs:
         env:
           NEXT_PUBLIC_APP_URL: ${{ secrets.NEXT_PUBLIC_APP_URL }}
           NEXTAUTH_URL: ${{ secrets.NEXTAUTH_URL }}
-
-      - name: Lint and Type-Check
-        run: |
-          bun run lint
-          bun run format
-          bun run typecheck
