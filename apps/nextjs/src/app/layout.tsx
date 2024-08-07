@@ -39,12 +39,20 @@ export const metadata = {
   description: siteConfig.description,
   keywords: [
     "Web Development",
+    "Web Design",
+    "Digital Marketing",
+    "Custom Websites",
+    "Responsive Design",
+    "SEO Services",
+    "E-commerce Development",
+    "Upper Peninsula",
+    "Northern Wisconsin",
+    "USA",
     "Digital Agency",
-    "Upper Peninsual",
     "Upper Peninsula Digital Media",
     "906",
-    "creative",
-    "agency",
+    "Creative Agency",
+    "Professional Website Development",
   ],
   authors: [
     {
@@ -65,7 +73,7 @@ export const metadata = {
     shortcut: "/favicon-16x16.png",
     apple: "/apple-touch-icon.png",
   },
-  metadataBase: new URL("https://show.saasfly.io/"),
+  metadataBase: new URL("https://backcountrycreative.com/"),
   // manifest: `${siteConfig.url}/site.webmanifest`,
 };
 
