@@ -13,8 +13,7 @@
     "lint": "bun with-env eslint . --quiet --cache --cache-location=node_modules/.cache/.eslintcache",
     "format": "prettier --write '**/*.{js,cjs,mjs,ts,tsx,md,json}' --ignore-path .prettierignore",
     "start": "bun with-env next start",
-    "with-env": "dotenv -e ../../.env.local --",
-    "postinstall": "bun run check-deps"
+    "with-env": "dotenv -e ../../.env.local --"
   },
   "dependencies": {
   "@dinero.js/currencies": "2.0.0-alpha.14",
