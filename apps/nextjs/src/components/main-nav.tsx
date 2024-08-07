@@ -30,19 +30,19 @@ export function MainNav({ items, children, params: { lang } }: MainNavProps) {
   };
   return (
     <div className="flex gap-6 md:gap-10">
-      <Link href={`/${lang}`} className="hidden items-center space-x-2 md:flex">
+      <Link href={`/${lang}`} className="hidden items-center space-x-2 lg:flex">
         <div>
           <Image
-            src="/images/avatars/bcc-logo.png"
-            width="36"
-            height="36"
-            alt=""
+            src="/images/bcc-logo-moose-transformed.webp"
+            width="75"
+            height="75"
+            alt="Backountry Creative logo: Back to home page."
           />
         </div>
         <div className="text-2xl font-semibold">Backcountry Creative</div>
       </Link>
       {items?.length ? (
-        <nav className="hidden gap-6 md:flex">
+        <nav className="hidden gap-6 lg:flex">
           {items?.map((item, index) => (
             <Link
               key={index}
@@ -61,7 +61,7 @@ export function MainNav({ items, children, params: { lang } }: MainNavProps) {
         </nav>
       ) : null}
       <button
-        className="flex items-center space-x-2 md:hidden"
+        className="flex items-center space-x-2 lg:hidden"
         onClick={() => setShowMobileMenu(!showMobileMenu)}
       >
         {showMobileMenu ? <Icons.Close /> : <Icons.Logo />}
