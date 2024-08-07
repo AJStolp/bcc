@@ -22,11 +22,13 @@ export default function ContactPage() {
   };
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    const BASE_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000";
+
     e.preventDefault();
     setStatus("Sending...");
     try {
       const response = await fetch(
-        process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000/api/contact",
+        `${BASE_URL}/api/contact` || "http://localhost:5000/api/contact",
         {
           method: "POST",
           headers: {

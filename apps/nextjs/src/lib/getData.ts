@@ -6,7 +6,6 @@ import {
 } from "../types/interfaces";
 
 const BASE_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000";
-console.log(BASE_URL, "BASE URL");
 
 export async function getHeroData(): Promise<HeroProps[]> {
   try {
