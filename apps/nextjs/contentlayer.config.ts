@@ -20,115 +20,6 @@ const defaultComputedFields: ComputedFields = {
   },
 };
 
-export const Doc = defineDocumentType(() => ({
-  name: "Doc",
-  filePathPattern: `docs/**/*.mdx`,
-  contentType: "mdx",
-  fields: {
-    title: {
-      type: "string",
-      required: true,
-    },
-    description: {
-      type: "string",
-    },
-    published: {
-      type: "boolean",
-      default: true,
-    },
-  },
-  computedFields: defaultComputedFields,
-}));
-
-export const Guide = defineDocumentType(() => ({
-  name: "Guide",
-  filePathPattern: `guides/**/*.mdx`,
-  contentType: "mdx",
-  fields: {
-    title: {
-      type: "string",
-      required: true,
-    },
-    description: {
-      type: "string",
-    },
-    date: {
-      type: "date",
-      required: true,
-    },
-    published: {
-      type: "boolean",
-      default: true,
-    },
-    featured: {
-      type: "boolean",
-      default: false,
-    },
-  },
-  computedFields: defaultComputedFields,
-}));
-
-export const Post = defineDocumentType(() => ({
-  name: "Post",
-  filePathPattern: `blog/**/*.mdx`,
-  contentType: "mdx",
-  fields: {
-    title: {
-      type: "string",
-      required: true,
-    },
-    description: {
-      type: "string",
-    },
-    date: {
-      type: "date",
-      required: true,
-    },
-    published: {
-      type: "boolean",
-      default: true,
-    },
-    image: {
-      type: "string",
-      required: true,
-    },
-    authors: {
-      // Reference types are not embedded.
-      // Until this is fixed, we can use a simple list.
-      // type: "reference",
-      // of: Author,
-      type: "list",
-      of: { type: "string" },
-      required: true,
-    },
-  },
-  computedFields: defaultComputedFields,
-}));
-
-export const Author = defineDocumentType(() => ({
-  name: "Author",
-  filePathPattern: `authors/**/*.mdx`,
-  contentType: "mdx",
-  fields: {
-    title: {
-      type: "string",
-      required: true,
-    },
-    description: {
-      type: "string",
-    },
-    avatar: {
-      type: "string",
-      required: true,
-    },
-    twitter: {
-      type: "string",
-      required: true,
-    },
-  },
-  computedFields: defaultComputedFields,
-}));
-
 export const Page = defineDocumentType(() => ({
   name: "Page",
   filePathPattern: `pages/**/*.mdx`,
@@ -147,7 +38,7 @@ export const Page = defineDocumentType(() => ({
 
 export default makeSource({
   contentDirPath: "./src/content",
-  documentTypes: [Page, Doc, Guide, Post, Author],
+  documentTypes: [Page],
   mdx: {
     remarkPlugins: [remarkGfm],
     rehypePlugins: [
