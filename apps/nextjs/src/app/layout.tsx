@@ -74,7 +74,6 @@ export const metadata = {
     apple: "/apple-touch-icon.png",
   },
   metadataBase: new URL("https://backcountrycreative.com/"),
-  // manifest: `${siteConfig.url}/site.webmanifest`,
 };
 
 export default function RootLayout({
